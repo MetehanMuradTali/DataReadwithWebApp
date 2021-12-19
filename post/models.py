@@ -6,6 +6,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=120, verbose_name="Başlık")
     file = models.FileField(null=True, blank=True)
+    user=models.ForeignKey('auth.User',verbose_name='yazar',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

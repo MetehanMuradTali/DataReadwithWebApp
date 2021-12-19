@@ -9,9 +9,13 @@ Merhaba Burası Post Index Sayfası<br>
         <h5 class="card-title">Id:{{ post.id}}</h5>
         <p class="card-text">Title:{{ post.title }}</p>
         <p class="card-text">File:{{ post.file}}</p>
+        <p class="card-text">Yazar:{{ post.user.get_full_name}}</p>
+
+          {% if request.user.is_authenticated %}
         <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Detaylar</a>
         <a href="{{ post.get_update_url }}" class="btn btn-secondary">Güncelle</a>
         <a href="{{ post.get_delete_url }}" class="btn btn-danger">Sil</a>
+          {% endif %}
       </div>
     </div>
 
