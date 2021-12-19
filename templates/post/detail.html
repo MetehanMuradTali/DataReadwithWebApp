@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    {{ post.id}}<br>
+    {{ post.title }}<br>
+    <a href="/media/{{ post.file }}">{{ post.file }}</a><br>
+{% endblock%}

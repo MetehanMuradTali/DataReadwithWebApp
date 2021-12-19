@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+
+Merhaba Burası Post Index Sayfası<br>
+{% for post in posts %}
+
+    <div class="card col-md-6 offset-3">
+      <div class="card-body">
+        <h5 class="card-title">Id:{{ post.id}}</h5>
+        <p class="card-text">Title:{{ post.title }}</p>
+        <p class="card-text">File:{{ post.file}}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Detaylar</a>
+        <a href="{{ post.get_update_url }}" class="btn btn-secondary">Güncelle</a>
+        <a href="{{ post.get_delete_url }}" class="btn btn-danger">Sil</a>
+      </div>
+    </div>
+
+{% endfor %}
+{% endblock%}
