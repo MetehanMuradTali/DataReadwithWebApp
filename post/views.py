@@ -5,7 +5,7 @@ from django.contrib import messages
 # Create your views here.
 
 def post_index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().filter(user_id=request.user.id)
     return render(request, 'post/index.html', {'posts': posts})
 
 
