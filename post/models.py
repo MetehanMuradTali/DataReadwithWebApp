@@ -24,29 +24,40 @@ class Post(models.Model):
         return reverse('post:create')
 
 class YazarBilgi(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    ogretim_turu = models.CharField(max_length=100)
+    ogretim_turu = models.TextField()
+
+    def __str__(self):
+        return str(self.id)
 
 
 
 class DanismanBilgi(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     unvan = models.TextField()
+
+    def __str__(self):
+        return str(self.id)
+
+
 
 
 
 class JuriBilgi(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     unvan = models.TextField()
 
+    def __str__(self):
+        return str(self.id)
+
 class AnaTablo(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     ders_adi  = models.TextField()
     proje_adi = models.TextField()
     yazar_bilgi=models.ForeignKey(YazarBilgi,on_delete=models.CASCADE)
@@ -55,3 +66,6 @@ class AnaTablo(models.Model):
     teslim_donemi=models.TextField()
     ozet=models.TextField()
     anahtar=models.TextField()
+
+    def __str__(self):
+        return str(self.id)
