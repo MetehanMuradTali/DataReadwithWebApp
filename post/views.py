@@ -239,10 +239,61 @@ def functionformining(path):
             yazar_instance2.ogretim_turu = Yazar2Ogretim
             yazar_instance2.save()
 
-    for i in range(2):
+
+    if YazarAdi2 != "":
+        for i in range(2):
+            for j in range(2):
+                for x in AnahtarKelimeler.split(','):
+                    if j ==0 and i==0:
+                        main_table_istance = AnaTablo()
+                        main_table_istance.ders_adi = Ders_Adi
+                        main_table_istance.proje_adi = Proje_Adi
+                        main_table_istance.teslim_donemi = Teslim_Donemi
+                        main_table_istance.danisman_bilgi = danisman_instance
+                        main_table_istance.ozet = Ozet
+                        main_table_istance.yazar_bilgi = yazar_instance1
+                        main_table_istance.juri_bilgi = juri_istancane1
+                        main_table_istance.anahtar= x
+                        main_table_istance.save()
+                    elif j ==1 and i==0:
+                        main_table_istance = AnaTablo()
+                        main_table_istance.ders_adi = Ders_Adi
+                        main_table_istance.proje_adi = Proje_Adi
+                        main_table_istance.teslim_donemi = Teslim_Donemi
+                        main_table_istance.danisman_bilgi = danisman_instance
+                        main_table_istance.ozet = Ozet
+                        main_table_istance.yazar_bilgi = yazar_instance1
+                        main_table_istance.juri_bilgi = juri_istancane2
+                        main_table_istance.anahtar= x
+                        main_table_istance.save()
+
+                    elif j ==0 and i==1:
+                        main_table_istance = AnaTablo()
+                        main_table_istance.ders_adi = Ders_Adi
+                        main_table_istance.proje_adi = Proje_Adi
+                        main_table_istance.teslim_donemi = Teslim_Donemi
+                        main_table_istance.danisman_bilgi = danisman_instance
+                        main_table_istance.ozet = Ozet
+                        main_table_istance.yazar_bilgi = yazar_instance2
+                        main_table_istance.juri_bilgi = juri_istancane1
+                        main_table_istance.anahtar= x
+                        main_table_istance.save()
+
+                    elif j == 1 and i == 1:
+                        main_table_istance = AnaTablo()
+                        main_table_istance.ders_adi = Ders_Adi
+                        main_table_istance.proje_adi = Proje_Adi
+                        main_table_istance.teslim_donemi = Teslim_Donemi
+                        main_table_istance.danisman_bilgi = danisman_instance
+                        main_table_istance.ozet = Ozet
+                        main_table_istance.yazar_bilgi = yazar_instance2
+                        main_table_istance.juri_bilgi = juri_istancane2
+                        main_table_istance.anahtar= x
+                        main_table_istance.save()
+    else:
         for j in range(2):
             for x in AnahtarKelimeler.split(','):
-                if j ==0 and i==0:
+                if j == 0:
                     main_table_istance = AnaTablo()
                     main_table_istance.ders_adi = Ders_Adi
                     main_table_istance.proje_adi = Proje_Adi
@@ -251,9 +302,9 @@ def functionformining(path):
                     main_table_istance.ozet = Ozet
                     main_table_istance.yazar_bilgi = yazar_instance1
                     main_table_istance.juri_bilgi = juri_istancane1
-                    main_table_istance.anahtar= x
+                    main_table_istance.anahtar = x
                     main_table_istance.save()
-                elif j ==1 and i==0:
+                elif j == 1:
                     main_table_istance = AnaTablo()
                     main_table_istance.ders_adi = Ders_Adi
                     main_table_istance.proje_adi = Proje_Adi
@@ -262,58 +313,8 @@ def functionformining(path):
                     main_table_istance.ozet = Ozet
                     main_table_istance.yazar_bilgi = yazar_instance1
                     main_table_istance.juri_bilgi = juri_istancane2
-                    main_table_istance.anahtar= x
-                    main_table_istance.save()
-
-                elif j ==0 and i==1:
-                    main_table_istance = AnaTablo()
-                    main_table_istance.ders_adi = Ders_Adi
-                    main_table_istance.proje_adi = Proje_Adi
-                    main_table_istance.teslim_donemi = Teslim_Donemi
-                    main_table_istance.danisman_bilgi = danisman_instance
-                    main_table_istance.ozet = Ozet
-                    main_table_istance.yazar_bilgi = yazar_instance2
-                    main_table_istance.juri_bilgi = juri_istancane1
-                    main_table_istance.anahtar= x
-                    main_table_istance.save()
-
-                elif j == 1 and i == 1:
-                    main_table_istance = AnaTablo()
-                    main_table_istance.ders_adi = Ders_Adi
-                    main_table_istance.proje_adi = Proje_Adi
-                    main_table_istance.teslim_donemi = Teslim_Donemi
-                    main_table_istance.danisman_bilgi = danisman_instance
-                    main_table_istance.ozet = Ozet
-                    main_table_istance.yazar_bilgi = yazar_instance2
-                    main_table_istance.juri_bilgi = juri_istancane2
-                    main_table_istance.anahtar= x
+                    main_table_istance.anahtar = x
                     main_table_istance.save()
 
 
-    # --1
-    print('ProjeAdı=', Proje_Adi)
-    print('YazarAdi1=', YazarAdi1)
-    print('YazarAdi2=', YazarAdi2)
-    print('YazarNumara1=', Yazar1Ogretim)
-    print('YazarNumara2=', Yazar2Ogretim)
-    # --2
-    print('DersAdı=', Ders_Adi)
-    print('TeslimTarihi=', Teslim_Tarihi)
-    print(Teslim_Donemi)
-
-    print('Danismanisim=', Danisman_isim)
-    print('Danismansoyisim=', Danisman_soyisim)
-    print('Danismanunvan=', Danisman_unvan)
-
-    print('Juri1isim=', Juri1_isim)
-    print('Juri1soyisim=', Juri1_soyisim)
-    print('Juri1unvan=', Juri1_unvan)
-
-    print('Juri2isim=', Juri2_isim)
-    print('Juri2soyisim=', Juri2_soyisim)
-    print('Juri2unvan=', Juri2_unvan)
-
-    # --4
-    print('AnahtarKelimeler=', AnahtarKelimeler)
-    print('Ozet=', Ozet)
 
