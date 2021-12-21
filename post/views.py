@@ -20,7 +20,9 @@ def post_index(request):
 
 def post_detail(request,id):
     post = get_object_or_404(Post, id=id)
-    return render(request, 'post/detail.html', {'post': post})
+    postname=str(Post.objects.get(id=id).file).replace('.pdf','').replace('_',' ')
+    anatabloinstance=AnaTablo.objects.filter(proje_adi__exact=postname)
+    return render(request, 'post/detail.html', {'post': post,'tablolar':anatabloinstance})
 
 
 def post_create(request):
@@ -180,6 +182,9 @@ def functionformining(path):
     if Teslim_Tarihi.lstrip()[4] == '6':
         Teslim_Yılı = Teslim_Tarihi.split('.')[2]
         Teslim_Donemi = str(int(Teslim_Yılı) - 1) + "-" + Teslim_Yılı + ' Bahar'
+    else:
+        Teslim_Yılı = Teslim_Tarihi.split('.')[2]
+        Teslim_Donemi = str(int(Teslim_Yılı) - 1) + "-" + Teslim_Yılı + ' Güz'
 
     ####SAYFA2######
     ####SAYFA4######

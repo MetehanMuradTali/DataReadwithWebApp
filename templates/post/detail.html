@@ -4,4 +4,38 @@
     {{ post.id}}<br>
     {{ post.title }}<br>
     <a href="/media/{{ post.file }}">{{ post.file }}</a><br>
+    ----------------------------------------<br>
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+            <th></th>
+            <th>id</th>
+            <th>ders_adi</th>
+            <th>proje_adi</th>
+            <th>teslim_donemi</th>
+            <th>yazar_bilgi</th>
+            <th>juri_bilgi</th>
+            <th>danisman_bilgi</th>
+            <th>anahtar</th>
+        </tr>
+       </thead>
+     <tbody>
+      {% for tablo in tablolar %}
+        <tr>
+        <th></th>
+        <th scope="row">{{ tablo.id }}</th>
+        <th>{{ tablo.ders_adi }}</th>
+        <th>{{ tablo.proje_adi }}</th>
+        <th>{{ tablo.teslim_donemi }}</th>
+        <th>{{ tablo.yazar_bilgi}}</th>
+        <th>{{ tablo.juri_bilgi }}</th>
+        <th>{{ tablo.danisman_bilgi }}</th>
+        <th>{{ tablo.anahtar }}</th>
+        </tr>
+      {% endfor %}
+    <tbody>
+    </table>
+
+
+
 {% endblock%}
